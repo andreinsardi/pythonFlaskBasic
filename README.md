@@ -7,7 +7,7 @@
 
 ## Ativar diretório virtual
 ###     nome diretorio + /bin/activate
-source env/bin/activate
+env\Scripts\activate
 
 ## Desligar diretorio virtual
 deactivate
