@@ -6,11 +6,11 @@
 - virtualenv env
 
 ## Ativar diretório virtual
-###     nome diretorio + /bin/activate
+###     nome diretorio
 env\Scripts\activate
 
 ## Desligar diretorio virtual
-deactivate
+env\Scripts\deactivate
 
 ### requirements.txt -> arquivo com toda configuração a ser instalada para rodar o projeto 
 
