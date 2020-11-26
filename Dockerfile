@@ -15,6 +15,6 @@ RUN pip3 install --upgrade pip
 RUN pip3 install uwsgi
 RUN pip3 install -r requirements.txt
 
-EXPOSE 5000
+ENTRYPOINT [ "python" ]
 
-CMD flask run --host=0.0.0.0 --port=5000
+CMD [ "app.py" ]
