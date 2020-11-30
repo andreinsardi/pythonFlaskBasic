@@ -1,20 +1,20 @@
-FROM ubuntu:18.04
+# set base image (host OS)
+FROM python:3.8
 
-LABEL DESCRIPTION="API Flask"
-# Application files
+# set the working directory in the container
 WORKDIR /app
-COPY . /app
 
-# OS specific updates
-RUN apt-get -q update --fix-missing
-RUN apt-get -q install -y apt-utils net-tools iputils-ping 
-RUN apt-get -q install -y python3 python3-dev python3-pip nginx
+# copy the dependencies file to the working directory
+COPY requirements.txt .
 
-# Python specific updates
-RUN pip3 install --upgrade pip
-RUN pip3 install uwsgi
-RUN pip3 install -r requirements.txt
+# install dependencies
+RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python" ]
+# copy the content of the local src directory to the working directory
+COPY . .
+  
+EXPOSE 5000 
+ 
+CMD flask run --host=0.0.0.0 --port=5000
 
-CMD [ "app.py" ]
+ 

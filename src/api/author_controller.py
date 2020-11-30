@@ -5,7 +5,7 @@ from src.api.serializers.author_serializer import author_request, author_result
 from src.services.author_service import create, change, delete, get
  
 
-ns = api.namespace('api/authon', description='Operations related to author')
+ns = api.namespace('api/author', description='Operations related to author')
 
  
 @ns.route('')#define rota
